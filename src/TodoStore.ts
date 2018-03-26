@@ -26,7 +26,7 @@ export default class TodoStore {
   }
 
   toggleAll (completed = true) {
-    this.todos = this.todos.map(t => com)
+    this.todos = this.todos.map(t => completed !== t.completed ? { ...t, completed } : t)
   }
 
   updateTitle (todo: Todo, title: string): void {
